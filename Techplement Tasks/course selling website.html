@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Course Selling Website</title>
+<style>
+   body{
+    background-image:url('https://img.freepik.com/free-vector/online-tutorials-concept_52683-37480.jpg');
+    background-size: cover;
+   }
+    #menu-bar{
+        background-color:black;
+        overflow: hidden;
+      }
+      
+      #menu-bar a {
+        float: left;
+        color: white;
+        text-align: center;
+        font-size: 17px;
+        height:15px;
+        padding: 14px 16px;
+        justify-content: center;
+      }
+      .logotext{
+          margin-top: 0px;
+      }
+     .logincontent{
+        display:none;
+     }
+     .logincontent:target{
+        display:block;
+     }
+     .registercontent{
+        display:none;
+     }
+     .registercontent:target{
+        display:block;
+     }
+     .aboutcontent{
+        display:none;
+     }
+     .aboutcontent:target{
+        display:block;
+     }
+     
+</style>
+</head>
+<body>
+<p style="display:inline">
+<img src="https://images.yourstory.com/cs/images/companies/ipchealthimpelsyslogo-1705833188475.jpg?fm=png&auto=format&ar=1:1&mode=fill&fill=solid.jpg" width="100" height="50"><span class="logotext"><b>LEARN FROM THE EXPERT</b></span>
+<div id="menu-bar">
+    <a href="#home"><button>Home</button></a>
+    <a href="about.html"><button>About</button></a>
+    <select id="redirectSelect" onchange="redirectToPage()">
+  <option value="">Courses</option>
+  <option value="./python.html">Python</option>
+  <option value="./java.html">java</option>
+  <option value="./web.html">web development</option>
+</select>
+
+    <a href="contact.html"><button>Contact</button></a>
+     <a href="#login"><button>Login</button></a>
+     <a href="#register"><button>Register</button></a>
+     <select name="Filter"style="margin:15px;">
+    <option value="">Filters</option>
+    <optgroup label="languages">
+      <option value="">Hindi</option>
+      <option value="">English</option>
+      <option value="">Telugu</option>
+    </optgroup>
+    <optgroup label="video duration">
+      <option value="">10-15 min</option>
+      <option value="">15-20 min</option>
+      <option value="">30-60 min</option>
+    </optgroup>
+    <optgroup label="level">
+      <option value="">Beginner</option>
+      <option value="">Intermediate</option>
+      <option value="">Advanced</option>
+    </optgroup>
+    <optgroup label="price">
+      <option value="">Paid</option>
+      <option value="">Free</option>
+    </optgroup>
+  </select>
+</div>
+</p>
+<center><h1 style="color:blue;">Welcome To MidLearn Which Is Best For Career</h1>
+</center>
+<form id=login class="logincontent">
+<h3>LOGIN DETAILS</h3>
+username:<input type="text" id="nam"placeholder="enter username"><br><br>
+password:<input type="password" id="pas" placeholder="enter password"><br><br>
+<button type="button"onclick="submitForm()"style="background-color:blue;">Submit</button>
+</div>
+</form>
+</br>
+<form id=register class="registercontent">
+<h3>REGISTER DETAILS</h3>
+First Name:<input type="text" id="fn" placeholder="enter first name">&nbsp Last Name:<input type="text" placeholder="enter last name"><br><br>
+create a password:<input type="password" id="ps" placeholder="enter password"><br><br>
+Mobile Number:<input type="number" id="num"><br><br>
+Email address:<input type="text" id="em" placeholder="enter your mail-id"><br><br>
+Gender:<input type="radio">Male
+       <input type="radio">Female
+        <input type="radio">Others<br><br>
+Address:<br>
+<textarea style="width:200px;height:50px;"></textarea>
+<br><br>
+Nationality:<select type="text">
+            <option value="">Indian</option>
+            <option value="">Afghan</option>
+            <option value="">American</option>
+            <option value="">Bahamian</option>
+            <option value="">Danish</option>
+           </select>
+<br>
+<button type="button" onclick="submitForm1()" style="background-color:red;">Submit</button>
+</div>
+</form>
+<br>
+<script>
+function redirectToPage() {
+  var selectElement = document.getElementById("redirectSelect");
+  var selectedValue = selectElement.value;
+  if (selectedValue) {
+    window.location.href = selectedValue;
+  }
+}
+</script>
+<script>
+    function submitForm() {
+         var name = document.getElementById("nam").value;
+         var pass = document.getElementById("pas").value;
+
+        if (name === "" || pass === "") {
+            // Display message if any field is empty
+            document.write("Please fill in all fields.");
+            return false; // Prevent form submission
+         }
+         else{
+        // Get the form element
+        var form = document.getElementById("login");
+
+        // Submit the form
+        form.submit();
+
+        // Display message
+        document.write("login successful!");
+      }
+    }
+</script>
+<script>
+    function submitForm1() {
+         var name1 = document.getElementById("fn").value;
+         var pass1 = document.getElementById("ps").value;
+         var number1 = document.getElementById("num").value;
+         var email1 = document.getElementById("em").value;
+          if (name1 === "" || pass1 === "" || number1==="" || email1==="") {
+            // Display message if any field is empty
+            document.write("Please fill in all fields.");
+            return false; // Prevent form submission
+         }
+         else{
+        // Get the form element
+        var form = document.getElementById("register");
+
+        // Submit the form
+        form.submit();
+
+        // Display message
+        document.write("Registered successfully!");
+    }
+}
+</script>
+
+</body>
+</html>
+
